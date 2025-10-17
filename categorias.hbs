@@ -1,0 +1,25 @@
+{{!< default}}
+
+<main class="site-main">
+
+    <header class="gh-canvas">
+        <h1 class="gh-page-title">Categorias</h1>
+        <p class="gh-page-description">Explora todas as categorias disponíveis.</p>
+    </header>
+
+    <section class="gh-canvas">
+        <ul class="gh-tag-list">
+            {{#get "tags" include="count.posts" limit="all" order="name asc"}}
+                {{#foreach tags}}
+                    <li class="gh-tag-list-item">
+                        <a class="gh-tag-card" href="{{url}}">
+                            <span class="gh-tag-name">{{name}}</span>
+                            <span class="gh-tag-count">{{count.posts}}</span>
+                        </a>
+                    </li>
+                {{/foreach}}
+            {{/get}}
+        </ul>
+    </section>
+
+</main>
