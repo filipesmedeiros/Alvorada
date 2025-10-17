@@ -1,0 +1,33 @@
+{{!< default}}
+
+<main class="site-main">
+
+    <header class="gh-canvas">
+        <h1 class="gh-page-title">Autores</h1>
+        <p class="gh-page-description">Conhece todos os autores e autoras do site.</p>
+    </header>
+
+    <section class="gh-canvas">
+        <ul class="gh-author-list">
+            {{#get "authors" include="count.posts" limit="all" order="name asc"}}
+                {{#foreach authors}}
+                    <li class="gh-author-list-item">
+                        <a class="gh-author-card" href="{{url}}">
+                            {{#if profile_image}}
+                                <img class="gh-author-image" src="{{profile_image}}" alt="{{name}}">
+                            {{/if}}
+                            <div class="gh-author-meta">
+                                <span class="gh-author-name">{{name}}</span>
+                                {{#if bio}}
+                                    <span class="gh-author-bio">{{bio}}</span>
+                                {{/if}}
+                                <span class="gh-author-count">{{count.posts}}</span>
+                            </div>
+                        </a>
+                    </li>
+                {{/foreach}}
+            {{/get}}
+        </ul>
+    </section>
+
+</main>

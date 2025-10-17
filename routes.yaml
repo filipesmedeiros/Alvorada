@@ -1,0 +1,22 @@
+routes:
+  /agenda/:
+    template: agenda
+  /categorias/:
+    template: categorias
+  /autores/:
+    template: autores
+
+collections:
+  /:
+    permalink: /{slug}/
+    template:
+      - index
+  /featured/:
+    permalink: /featured/{slug}/
+    filter: featured:true
+    template:
+      - index
+
+taxonomies:
+  tag: /tag/{slug}/
+  author: /author/{slug}/
