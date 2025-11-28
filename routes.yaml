@@ -10,11 +10,11 @@ collections:
     filter: tag:-hash-agenda
     template:
       - index
-  /featured/:
-    permalink: /featured/{slug}/
-    filter: featured:true
-    template:
-      - index
+  # /featured/:
+  #   permalink: /featured/{slug}/
+  #   filter: featured:true
+  #   template:
+  #     - index
   /agenda/:
     permalink: /agenda/{slug}/
     filter: tag:hash-agenda
