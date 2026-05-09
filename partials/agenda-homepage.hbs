@@ -1,4 +1,4 @@
-{{#get "posts" filter="tag:#agenda" limit="5" order="published_at desc" as |agenda_items|}}
+{{#get "posts" filter="tag:hash-agenda" limit="5" order="published_at desc" as |agenda_items|}}
 {{#if agenda_items}}
 <section class="agenda-homepage gh-canvas">
     <h2 class="agenda-homepage-title">{{t "Agenda"}}</h2>
