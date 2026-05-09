@@ -1,0 +1,86 @@
+{{#get "posts" filter="tag:#agenda" limit="5" order="published_at desc" as |agenda_items|}}
+{{#if agenda_items}}
+<section class="agenda-homepage gh-canvas">
+    <h2 class="agenda-homepage-title">{{t "Agenda"}}</h2>
+    <div class="agenda-homepage-list">
+        {{#foreach agenda_items}}
+        <a href="{{url}}" class="agenda-homepage-item">
+            <span class="agenda-homepage-date">{{date published_at format="DD MMM"}}</span>
+            <span class="agenda-homepage-info">
+                <span class="agenda-homepage-name">{{title}}</span>
+                {{#if custom_excerpt}}<span class="agenda-homepage-local">{{custom_excerpt}}</span>{{/if}}
+            </span>
+            <span class="agenda-homepage-arrow">→</span>
+        </a>
+        {{/foreach}}
+    </div>
+    <a href="/agenda/" class="agenda-homepage-viewall">{{t "View all →"}}</a>
+</section>
+
+<style>
+.agenda-homepage {
+    margin: 0 auto 48px;
+    padding: 0;
+}
+.agenda-homepage-title {
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 16px;
+    opacity: 0.5;
+}
+.agenda-homepage-list {
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+.agenda-homepage-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.2s;
+}
+.agenda-homepage-item:hover {
+    opacity: 0.7;
+}
+.agenda-homepage-date {
+    font-size: 0.85rem;
+    min-width: 48px;
+    opacity: 0.5;
+}
+.agenda-homepage-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+.agenda-homepage-name {
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+.agenda-homepage-local {
+    font-size: 0.8rem;
+    opacity: 0.5;
+}
+.agenda-homepage-arrow {
+    font-size: 0.9rem;
+    opacity: 0.4;
+}
+.agenda-homepage-viewall {
+    display: inline-block;
+    margin-top: 16px;
+    font-size: 0.85rem;
+    opacity: 0.5;
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.2s;
+}
+.agenda-homepage-viewall:hover {
+    opacity: 1;
+}
+</style>
+{{/if}}
+{{/get}}
