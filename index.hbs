@@ -2,8 +2,8 @@
 
 <main class="site-main">
 
-    <h2 class="feed-section-title gh-canvas">{{t "Articles and news"}}</h2>
     <div class="post-feed gh-feed gh-canvas">
+        <h2 class="feed-section-title gh-loadmore-exclude">{{t "Articles and news"}}</h2>
         {{#foreach posts}}
             {{> "loop-homepage"}}
         {{/foreach}}
