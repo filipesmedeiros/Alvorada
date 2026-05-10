@@ -66,6 +66,25 @@ document.querySelectorAll('.agenda-homepage .feed-calendar-date[data-excerpt]').
     overflow: visible;
     text-overflow: unset;
 }
+.agenda-homepage .feed-calendar {
+    white-space: normal;
+    max-width: 12rem;
+    min-width: unset;
+    line-height: 1.4;
+}
+@media (max-width: 767px) {
+    .agenda-homepage .feed {
+        flex-wrap: wrap;
+    }
+    .agenda-homepage .feed-calendar {
+        width: 100%;
+        max-width: 100%;
+        margin-right: 0;
+    }
+    .agenda-homepage .feed-title {
+        width: 100%;
+    }
+}
 </style>
 {{/if}}
 {{/get}}

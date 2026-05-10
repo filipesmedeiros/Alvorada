@@ -1,15 +1,7 @@
 <article class="feed {{visibility}} {{post_class}}">
 
     <div class="feed-calendar">
-        <span class="feed-calendar-day">
-            {{date published_at format="DD"}}
-        </span>
-        <span class="feed-calendar-month">
-            {{date published_at format="MMM"}}
-        </span>
-        <span class="feed-calendar-year">
-            '{{date published_at format="YY"}}
-        </span>
+        <span class="feed-calendar-date">{{date published_at format="DD.MM.YYYY"}}</span>
     </div>
 
     <h2 class="feed-title">{{title}}</h2>
