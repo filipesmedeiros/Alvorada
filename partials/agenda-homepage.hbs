@@ -5,9 +5,13 @@
     {{#foreach agenda_items}}
     <article class="feed public">
         <div class="feed-calendar">
-            <span class="feed-calendar-day">{{date published_at format="DD"}}</span>
-            <span class="feed-calendar-month">{{date published_at format="MMM"}}</span>
-            <span class="feed-calendar-year">'{{date published_at format="YY"}}</span>
+            {{#if custom_excerpt}}
+                <span class="feed-calendar-date" data-excerpt="{{custom_excerpt}}">{{date published_at format="DD MMM 'YY"}}</span>
+            {{else}}
+                <span class="feed-calendar-day">{{date published_at format="DD"}}</span>
+                <span class="feed-calendar-month">{{date published_at format="MMM"}}</span>
+                <span class="feed-calendar-year">'{{date published_at format="YY"}}</span>
+            {{/if}}
         </div>
         <h2 class="feed-title">{{title}}</h2>
         <div class="feed-right">
@@ -19,6 +23,18 @@
     {{/foreach}}
     <a href="/agenda/" class="agenda-homepage-viewall">{{t "View all →"}}</a>
 </div>
+
+<script>
+document.querySelectorAll('.agenda-homepage .feed-calendar-date[data-excerpt]').forEach(function(el) {
+    var excerpt = el.getAttribute('data-excerpt');
+    var parts = excerpt.split('|');
+    if (parts.length > 1) {
+        el.textContent = parts[0].trim();
+    } else {
+        el.textContent = excerpt.trim();
+    }
+});
+</script>
 
 <style>
 .feed-section-title {
