@@ -4,7 +4,7 @@
 /* Agenda: title first, date below, single line */
 .agenda-homepage .feed { flex-wrap: wrap; padding: .8rem 0; gap: .3rem; }
 .agenda-homepage .feed-title { order: 1; width: 100%; font-weight: 700; }
-.agenda-homepage .feed-calendar { order: 2; width: 100%; margin-right: 0; white-space: nowrap; font-weight: 400; font-size: 1.4rem; display: block; overflow: hidden; text-overflow: ellipsis; }
+.agenda-homepage .feed-calendar { order: 2; width: 100%; margin-right: 0; font-weight: 400; font-size: 1.4rem; display: block; } .agenda-homepage .feed-calendar span { white-space: nowrap; }
 
 /* Articles homepage: title first, date+author below */
 .post-feed .feed { flex-wrap: wrap; padding: .8rem 0; gap: .3rem; }
