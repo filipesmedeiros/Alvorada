@@ -1,6 +1,6 @@
 {{#get "posts" filter="tag:hash-agenda" limit="5" order="published_at desc" as |agenda_items|}}
 {{#if agenda_items}}
-<div class="gh-feed gh-canvas agenda-homepage">
+<div class="gh-canvas agenda-homepage">
     <h2 class="feed-section-title">{{t "Agenda"}}</h2>
     {{#foreach agenda_items}}
     <article class="feed public">
