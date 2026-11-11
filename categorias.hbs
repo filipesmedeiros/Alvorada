@@ -8,13 +8,13 @@
     </header>
 
     <section class="gh-canvas">
-        <ul class="gh-tag-list">
+        <ul class="gh-tag-list categoria-list">
             {{#get "tags" include="count.posts" limit="all" order="name asc"}}
                 {{#foreach tags}}
-                    <li class="gh-tag-list-item">
+                    <li class="gh-tag-list-item categoria-item">
                         <a class="gh-tag-card categoria-card" href="{{url}}">
-                            <img class="categoria-image" src="{{feature_image}}" alt="{{name}}">
-                            <div class="categoria-info">
+                            <div class="categoria-image" style="height: 15rem; background-size: cover; {{#if feature_image}} background-image: url({{feature_image}});{{else}}background: white;{{/if}}" alt="{{name}}"></div>
+                            <div class="categoria-info" style="background: {{#if accent_color}}{{accent_color}}{{else}}var(--ghost-accent-color){{/if}};">
                                 <span class="gh-tag-name categoria-name">{{name}}</span>
                                 <span class="gh-tag-count categoria-count">{{count.posts}}</span>
                             </div>

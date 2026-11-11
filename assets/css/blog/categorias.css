@@ -1,0 +1,22 @@
+.categoria-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding-left: 0px;
+}
+
+.categoria-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.categoria-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: larger;
+    padding: 10px;
+    margin-top: 5px;
+    color: var(--white-color);
+    font-weight: bold;
+}
